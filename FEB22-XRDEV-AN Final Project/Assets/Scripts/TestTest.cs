@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class TestTest : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Animator bladeanim;
+    private bool isEnabled = false;
+    
 
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ToggleBlade();
+        }
+    }
+
+    private void ToggleBlade()
+    {
+        isEnabled = !isEnabled;
+        bladeanim.SetBool("IsOn", isEnabled);
     }
 }
